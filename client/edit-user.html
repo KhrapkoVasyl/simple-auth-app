@@ -1,0 +1,52 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/common.css" />
+    <link rel="stylesheet" href="./styles/edit-user.css" />
+    <!-- <script defer type="module" src="./scripts/chat.js"></script> -->
+    <title>SimpleAuth App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-container">
+        <header>
+          <nav class="header-nav">
+            <a href="./index.html">SimpleAuth🔐 App</a>
+          </nav>
+          <div class="user-actions">
+            <button class="log-out-btn">Log Out</button>
+        </div>
+        </header>
+      </div>
+        <div class="user-container">
+          <div class="title">Edit user:</div>
+          <form class="user-info">
+            <div class="user-info-item">
+              <label for="name-input" class="info-label">Name:</label>
+              <input id="name-input" class="info-input" type="text" placeholder="" />
+            </div>
+            <div class="user-info-item">
+              <label for="email-input" class="info-label">Email:</label>
+              <input id="email-input" class="info-input" type="text" placeholder="" />
+            </div>
+            <div class="user-info-item">
+              <label for="group-input" class="info-label">Group:</label>
+              <input id="group-input" class="info-input" type="text" placeholder="" />
+            </div>
+            <div class="user-info-item">
+              <label for="variant-input" class="info-label">Variant:</label>
+              <input id="variant-input" class="info-input" type="number" placeholder="" />
+            </div>
+          </form>
+          <div class="btn-container">
+            <button class="btn">Update</button>
+          </div>
+          <div class="links">
+            <a href="./user.html" class="user-link"><u>Back to user profile</u></a>
+            <a href="./users.html" class="back-link"><u>Back to users</u></a>
+          </div>
+        </div>
+    </div>
+</html>

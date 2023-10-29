@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/common.css" />
+    <link rel="stylesheet" href="./styles/sign-up.css" />
+    <!-- <script defer type="module" src="./scripts/chat.js"></script> -->
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-container">
+        <header>
+          <nav class="header-nav">
+            <a href="./index.html">SimpleAuth🔐 App</a>
+          </nav>
+        </header>
+      </div>
+      <div class="content-container">
+        <h2>Sign Up to the App</h2>
+        <form class="sign-in-form">
+          <div class="input-container">
+            <label for="name-input"
+              ><span style="color: red">*</span>name:</label
+            >
+            <input
+              id="name-input"
+              autofocus
+              placeholder="Mike Vincent"
+              type="text"
+            />
+          </div>
+          <div class="input-container">
+            <label for="email-input"
+              ><span style="color: red">*</span>email:</label
+            >
+            <input id="email-input" placeholder="email" type="text" />
+          </div>
+          <div class="input-container">
+            <label for="password-input"
+              ><span style="color: red">*</span>password:</label
+            >
+            <input id="password-input" placeholder="password" type="password" />
+          </div>
+          <div class="input-container">
+            <label for="group-input"
+              ><span style="color: red">*</span>group:</label
+            >
+            <input id="group-input" placeholder="ІП-04" type="text" />
+          </div>
+          <div class="input-container">
+            <label for="variant-input"
+              ><span style="color: red">*</span>variant:</label
+            >
+            <input id="variant-input" placeholder="12" type="number" />
+          </div>
+          <div class="btn-container">
+            <button class="btn">Sign Up</button>
+          </div>
+        </form>
+        <p>
+          Already registered? <a href="./sign-in.html"><u>Sign in</u></a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

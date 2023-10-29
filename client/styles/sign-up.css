@@ -1,0 +1,31 @@
+.input-container {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-container label {
+  width: 30%;
+  text-align: right;
+  margin-right: 10px;
+  margin-left: 10%;
+}
+
+.input-container input {
+  height: 30px;
+  font-size: 18px;
+  width: 20%;
+  margin-right: 40%;
+}
+
+.btn {
+  display: inline-block;
+  background-color: rgb(66, 136, 240);
+  color: white;
+  border-color: rgba(20, 90, 252, 0.851);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
