@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=simple-auth-app
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=simple-auth-app
+    ports:
+      - '5432:5432'
+    networks:
+      - network
+    volumes:
+      - db:/var/lib/postgresql/data
+
+networks:
+  network:
+    driver: bridge
+
+volumes:
+  db:
