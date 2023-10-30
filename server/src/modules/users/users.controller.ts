@@ -14,12 +14,15 @@ import { UsersService } from './users.service';
 import { UserEntity } from './user.entity';
 import { IdDto } from 'src/common/dto';
 import { CreateUserDto, UpdateUserDto } from './dto';
-import { ApiTags } from '@nestjs/swagger';
-import { UseRole } from 'src/common/decorators';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { UserRoleEnum } from './enums';
+import { UseRole } from '../auth/decorators';
+import { AccessTokenGuard } from '../auth/guards';
 
 @ApiTags('users')
 @Controller('users')
+@ApiBearerAuth()
+@UseGuards(AccessTokenGuard)
 @UseInterceptors(ClassSerializerInterceptor)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
