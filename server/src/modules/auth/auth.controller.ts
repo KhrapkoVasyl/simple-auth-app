@@ -2,13 +2,19 @@ import {
   Body,
   ClassSerializerInterceptor,
   Controller,
+  Get,
+  Patch,
   Post,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { SingInDto, SignUpDto } from './dto';
-import { ApiTags } from '@nestjs/swagger';
-import { AccessToken } from './types';
+import { SingInDto, SignUpDto, UpdateProfileDto } from './dto';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { AccessToken, JwtPayloadUser } from './types';
+import { User } from 'src/common/decorators';
+import { UserEntity } from '../users/user.entity';
+import { AccessTokenGuard } from './guards';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -24,5 +30,22 @@ export class AuthController {
   @Post('sign-in')
   signIn(@Body() data: SingInDto): Promise<AccessToken> {
     return this.authService.signIn(data);
+  }
+
+  @Get('profile')
+  @ApiBearerAuth()
+  @UseGuards(AccessTokenGuard)
+  findProfile(@User() user: JwtPayloadUser): Promise<UserEntity> {
+    return this.authService.findOne({ id: user.id });
+  }
+
+  @Patch('profile')
+  @ApiBearerAuth()
+  @UseGuards(AccessTokenGuard)
+  findOne(
+    @User() user: JwtPayloadUser,
+    @Body() data: UpdateProfileDto,
+  ): Promise<UserEntity> {
+    return this.authService.updateOne({ id: user.id }, data);
   }
 }

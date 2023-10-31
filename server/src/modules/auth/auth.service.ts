@@ -11,6 +11,7 @@ import { AppConfigService } from 'src/config/app-config.service';
 import { UserEntity } from '../users/user.entity';
 import { SignUpDto, SingInDto } from './dto';
 import { ErrorMessagesEnum } from 'src/common/enums';
+import { FindOptionsWhere } from 'typeorm';
 
 @Injectable()
 export class AuthService {
@@ -75,5 +76,16 @@ export class AuthService {
         loadEagerRelations: false,
       },
     );
+  }
+
+  async findOne(conditions: FindOptionsWhere<UserEntity>): Promise<UserEntity> {
+    return this.usersService.findOne(conditions);
+  }
+
+  async updateOne(
+    conditions: FindOptionsWhere<UserEntity>,
+    data: Partial<UserEntity>,
+  ): Promise<UserEntity> {
+    return this.usersService.updateOne(conditions, data);
   }
 }
