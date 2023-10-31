@@ -28,23 +28,25 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get()
+  @UseRole(UserRoleEnum.ADMIN)
   findAll(): Promise<UserEntity[]> {
     return this.usersService.findAll();
   }
 
   @Get(':id')
+  @UseRole(UserRoleEnum.ADMIN)
   findOne(@Param() conditions: IdDto): Promise<UserEntity> {
     return this.usersService.findOne(conditions);
   }
 
-  @UseRole(UserRoleEnum.ADMIN)
   @Post()
+  @UseRole(UserRoleEnum.ADMIN)
   createOne(@Body() createEntityDto: CreateUserDto): Promise<UserEntity> {
     return this.usersService.createOne(createEntityDto);
   }
 
-  @UseRole(UserRoleEnum.ADMIN)
   @Patch(':id')
+  @UseRole(UserRoleEnum.ADMIN)
   updateOne(
     @Param() conditions: IdDto,
     @Body() updateEntityDto: UpdateUserDto,
@@ -52,8 +54,8 @@ export class UsersController {
     return this.usersService.updateOne(conditions, updateEntityDto);
   }
 
-  @UseRole(UserRoleEnum.ADMIN)
   @Delete(':id')
+  @UseRole(UserRoleEnum.ADMIN)
   deleteOne(@Param() conditions: IdDto): Promise<UserEntity> {
     return this.usersService.deleteOne(conditions);
   }
