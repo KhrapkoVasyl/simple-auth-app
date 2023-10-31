@@ -15,6 +15,8 @@ async function bootstrap() {
   );
   const appConfigService = app.get<AppConfigService>(AppConfigService);
 
+  app.enableCors();
+
   const HOST = appConfigService.get<string>('NEST_HOST');
   const PORT = appConfigService.get<string>('NEST_PORT');
   const GLOBAL_PREFIX = appConfigService.get<string>('GLOBAL_PREFIX');
