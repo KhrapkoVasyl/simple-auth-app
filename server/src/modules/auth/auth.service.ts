@@ -41,9 +41,14 @@ export class AuthService {
   }
 
   async signIn({ email, password }: SingInDto): Promise<AccessToken> {
-    const user = await this.usersService.findOne({ email }).catch(() => {
-      throw new UnauthorizedException(ErrorMessagesEnum.UNAUTHORIZED);
-    });
+    const user = await this.usersService
+      .findOne(
+        { email },
+        { select: { id: true, email: true, role: true, password: true } },
+      )
+      .catch(() => {
+        throw new UnauthorizedException(ErrorMessagesEnum.UNAUTHORIZED);
+      });
 
     const passwordMatches = await bcrypt.compare(password, user.password);
     if (!passwordMatches) {
@@ -72,7 +77,7 @@ export class AuthService {
     return this.usersService.findOne(
       { id, role, email },
       {
-        select: { id: true, role: true, name: true },
+        select: { id: true, role: true, email: true },
         loadEagerRelations: false,
       },
     );

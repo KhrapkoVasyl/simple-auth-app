@@ -21,7 +21,7 @@ export class UserEntity extends CommonEntity {
 
   @ApiHideProperty()
   @Exclude()
-  @Column({ type: 'varchar', length: 64 })
+  @Column({ type: 'varchar', length: 64, select: false })
   password: string;
 
   @ApiProperty({
@@ -44,6 +44,7 @@ export class UserEntity extends CommonEntity {
   @BeforeUpdate()
   public async hashPassword() {
     if (this.password) {
+      console.log('\n\nThis password: ', this.password, '\n\n');
       const SALT_ROUNDS = config.get<number>('SALT_ROUNDS');
       this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
     }
