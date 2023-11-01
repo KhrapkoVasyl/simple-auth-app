@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/common.css" />
     <link rel="stylesheet" href="./styles/sign-in.css" />
-    <!-- <script defer type="module" src="./scripts/chat.js"></script> -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <script defer type="module" src="./scripts/sign-in.js"></script>
     <title>Sign In</title>
   </head>
   <body>
@@ -24,13 +28,24 @@
             <label for="email-input"
               ><span style="color: red">*</span>email:</label
             >
-            <input id="email-input" autofocus placeholder="email" type="text" />
+            <input
+              id="email"
+              autofocus
+              placeholder="email"
+              type="text"
+              name="email"
+            />
           </div>
           <div class="input-container">
             <label for="password-input"
               ><span style="color: red">*</span>password:</label
             >
-            <input id="password-input" placeholder="password" type="password" />
+            <input
+              id="password"
+              placeholder="password"
+              type="password"
+              name="password"
+            />
           </div>
           <div class="btn-container">
             <button class="btn">Sign In</button>

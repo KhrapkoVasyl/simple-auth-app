@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/common.css" />
     <link rel="stylesheet" href="./styles/user.css" />
-    <!-- <script defer type="module" src="./scripts/chat.js"></script> -->
+    <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+  ></script>
+  <script defer type="module" src="./scripts/user.js"></script>
     <title>SimpleAuth App</title>
   </head>
   <body>
@@ -25,24 +29,24 @@
           <div class="user-info">
             <div class="user-info-item">
               <span class="info-label">Name:</span>
-              <span class="info-value">Vasyl Khrapko</span>
+              <span class="info-value" id="name"></span>
             </div>
             <div class="user-info-item">
               <span class="info-label">Email:</span>
-              <span class="info-value">vasyl@example.com</span>
+              <span class="info-value" id="email"></span>
             </div>
             <div class="user-info-item">
               <span class="info-label">Group:</span>
-              <span class="info-value">ІП-04</span>
+              <span class="info-value" id="group"></span>
             </div>
             <div class="user-info-item">
               <span class="info-label">Variant:</span>
-              <span class="info-value">12</span>
+              <span class="info-value" id="variant"></span>
             </div>
           </div>
           <div class="links">
             <a href="./edit-user.html" class="edit-link"><u>Edit user</u></a>
-            <a href="./users.html" class="back-link"><u>Back to users</u></a>
+            <a href="./users.html" class="back-link hide-back-link"><u>Back to users</u></a>
           </div>
         </div>
     </div>

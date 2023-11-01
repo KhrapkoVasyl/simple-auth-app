@@ -37,6 +37,6 @@
   margin-right: 50px;
 }
 
-.back-link {
-  /* visibility: hidden; */
+.hide-back-link {
+  visibility: hidden;
 }

@@ -41,3 +41,8 @@ td {
   padding: 10px;
   margin-right: 50px;
 }
+
+.user-link {
+  text-decoration: underline;
+  color: blue;
+}

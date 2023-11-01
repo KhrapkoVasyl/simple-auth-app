@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/common.css" />
     <link rel="stylesheet" href="./styles/edit-user.css" />
-    <!-- <script defer type="module" src="./scripts/chat.js"></script> -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <script defer type="module" src="./scripts/edit-user.js"></script>
     <title>SimpleAuth App</title>
   </head>
   <body>
@@ -24,28 +28,28 @@
           <div class="title">Edit user:</div>
           <form class="user-info">
             <div class="user-info-item">
-              <label for="name-input" class="info-label">Name:</label>
-              <input id="name-input" class="info-input" type="text" placeholder="" />
+              <label for="name" class="info-label">Name:</label>
+              <input id="name" class="info-input" type="text" placeholder="" name="name" />
             </div>
             <div class="user-info-item">
-              <label for="email-input" class="info-label">Email:</label>
-              <input id="email-input" class="info-input" type="text" placeholder="" />
+              <label for="email" class="info-label">Email:</label>
+              <input id="email" class="info-input" type="text" placeholder="" name="email" />
             </div>
             <div class="user-info-item">
-              <label for="group-input" class="info-label">Group:</label>
-              <input id="group-input" class="info-input" type="text" placeholder="" />
+              <label for="group" class="info-label">Group:</label>
+              <input id="group" class="info-input" type="text" placeholder="" name="group" />
             </div>
             <div class="user-info-item">
-              <label for="variant-input" class="info-label">Variant:</label>
-              <input id="variant-input" class="info-input" type="number" placeholder="" />
+              <label for="variant" class="info-label">Variant:</label>
+              <input id="variant" class="info-input" type="number" placeholder="" name="variant" />
+            </div>
+            <div class="btn-container">
+              <button class="btn">Update</button>
             </div>
           </form>
-          <div class="btn-container">
-            <button class="btn">Update</button>
-          </div>
           <div class="links">
             <a href="./user.html" class="user-link"><u>Back to user profile</u></a>
-            <a href="./users.html" class="back-link"><u>Back to users</u></a>
+            <a href="./users.html" class="back-link hide-back-to-users-link"><u>Back to users</u></a>
           </div>
         </div>
     </div>
